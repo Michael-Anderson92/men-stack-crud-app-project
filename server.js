@@ -6,20 +6,15 @@ const mongoose = require("mongoose")
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 const session = require("express-session");
+const MongoStore = require('connect-mongo')
 
-//import controllers (endpoints)
-const dashboardController = require('./controllers/dashboardController.js')
-const authController = require('./controllers/authController.js');
-const healthController = require('./controllers/healthController.js');
-const indexController = require('./controllers/indexController.js');
-const userController = require('./controllers/userController.js');
+app.set('view engine', 'ejs'); // Set 'ejs' or any other view engine you are using
 
-// import middleware functions
+// Import middleware functions
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
-const { application } = require('express');
 
-const port = process.env.PORT ? process.env.PORT : "3000";
+const port = process.env.PORT || 3000;
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -27,43 +22,48 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 })
 
-//Middleware
-// parses form submissions to create req.body
+// Middleware
 app.use(express.urlencoded({ extended: false }));
-// we can process delete and put requests
 app.use(methodOverride("_method"))
-// log out http requests into the server
 app.use(morgan("dev"));
-// creates/processes our session cookies
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+  cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hours
+}));
 
-// Using the custom middleware function
-// This must exist before our endpoints (because it is attaching) the user
-// variable to the response (ejs page
 app.use(passUserToView);
 
-// ================================================
-// ENDPOINTS
 // Landing Page
 app.get('/', (req, res) => {
-  console.log(req.session, " <- req.sessionn")
-// if we are logged in lets redirect the user to thir applications index page
-// NOTE: THIS MAY CHANGE IN MY CASE IF I WANT A WELCOME PAGE PRIOR TO THE INDEX PAGE
- if (req.session.user) {
-  res.redirect(`/users/${req.session.user._id}/dashboard`)
- } else {
-  res.render('index.ejs');
- }
+  console.log(req.session, " HELLO <- req.session");
+
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/dashboard`);
+  } else {
+    res.render('index.ejs');
+    console.log('could not render dashboard/home.ejs')
+  }
 });
 
-app.use(isSignedIn);
-app.use("/users/:userId/dashboard", dashboardController)
+// Define the welcome route
+app.get('/welcome', (req, res) => {
+  if (req.session.user) {
+    res.render('welcome.ejs');
+  } else {
+    res.redirect('/');
+  }
+});
+
+const dashboardRoutes = require('./routes/dashboard');
+// Corrected imports in server.js
+const authRoutes = require('./controllers/authController'); // Ensure this file exists
+
+
+app.use('/auth', authRoutes);
+app.use('/users/:userId/dashboard', isSignedIn, dashboardRoutes);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

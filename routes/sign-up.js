@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const { User } = require('../models/user'); 
+const { User } = require('../models/user');
 
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs');
@@ -15,17 +15,13 @@ router.post('/sign-up', async (req, res) => {
     }
 
     if (req.body.password !== req.body.confirmPassword) {
-      return res.send('Password and Confirm Password must match.');
-    }
+          return res.send('Password and Confirm Password must match.');
+        }
 
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     const userCreated = await User.create({
       username: req.body.username,
-      password: hashedPassword,
-      fullName: req.body.fullName,
-      email: req.body.email,
-      dateOfBirth: req.body.dateOfBirth,
-      lastLogin: new Date()
+      password: hashedPassword
     });
 
     req.session.user = {
