@@ -1,12 +1,12 @@
-<nav>
-	<% if (user) { %>
-		<a href="/users/<%= user._id %>/myweight">My Weight</a>
-    <a href="/users/<%= user._id %>/myweight">My Meds</a>
-    <a href="/users/<%= user._id %>/myweight">My Sleep</a>
-    <a href="/users/<%= user._id %>/myweight">My Fitness</a>
-    <a href="/users/<%= user._id %>/myweight">My Brain</a>
-	<% } else {%>
-		<a href="/auth/sign-in">Sign In</a>
-		<a href="/auth/sign-out">Sign Out</a>
-	<% } %>
+<nav class="app-bar">
+  <% if (user) { %>
+      <a href="/users/<%= user._id %>/myweight">My Weight</a>
+      <a href="/users/<%= user._id %>/mymeds">My Meds</a>
+      <a href="/users/<%= user._id %>/mysleep">My Sleep</a>
+      <a href="/users/<%= user._id %>/myfitness">My Fitness</a>
+      <a href="/users/<%= user._id %>/mybrain">My Brain</a>
+  <% } else {%>
+      <a href="/auth/sign-in">Sign In</a>
+      <a href="/auth/sign-out">Sign Out</a>
+  <% } %>
 </nav>

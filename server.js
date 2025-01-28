@@ -6,8 +6,12 @@ const mongoose = require("mongoose")
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 const session = require("express-session");
-const MongoStore = require('connect-mongo')
+const MongoStore = require('connect-mongo');
+const path = require('path');  // Make sure this line is present
 
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // Set 'ejs' or any other view engine you are using
 
 // Import middleware functions

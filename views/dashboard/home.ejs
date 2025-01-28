@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<%- include('../partials/nav.ejs') %>
-<%- include('../partials/app-bar.ejs') %>
+<%- include('../partials/html-head.ejs') %> <!-- Includes all head elements -->
 <body>
-  <h1>HELLO!!!!</h1>
-  
+  <%- include('../partials/dashNav.ejs') %>
+  <%- include('../partials/dashTitle.ejs') %>
+  <%- include('../partials/app-bar.ejs') %>
+  <h1>ARTICLE INFORMATION AND OTHER STUFF HERE</h1>
 </body>
 </html>

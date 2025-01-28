@@ -1,0 +1,11 @@
+<nav class="dash-nav"> <!-- Keep the class names consistent -->
+	<% if (user) { %>
+			<a href="/users/<%= user._id %>/dashboard">
+					<img src="/public/images/logo.png" alt="Company Logo"> <!-- Fixed typo in image path -->
+			</a>
+			<a href="/auth/sign-out">Sign Out</a>
+	<% } else { %>
+			<a href="/auth/sign-in">Sign In</a>
+			<a href="/auth/sign-out">Sign Out</a>
+	<% } %>
+</nav>
