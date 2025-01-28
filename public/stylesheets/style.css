@@ -10,17 +10,30 @@
   justify-content: space-between; /* Spread contents */
   align-items: center; /* Vertically align items */
   color: #EEE8AA; /* Pale Gold text color */
-  background-color: #228B22; /* Forest Green background */
-  padding: 1.5vh;
+  background-color: blue; /* Forest Green background */
 }
 
-/* Add some padding to anchor tags to ensure they touch the edges */
+
 .dash-nav a {
-  flex: 1; /* Spread links evenly */
-  text-align: center; /* Center the text within each link */
+  display: flex; 
   color: #EEE8AA;
-  background-color: blue; /* Pale Gold text color */ /* Add horizontal padding to hug the edges */
 }
+
+.dash-nav .logo img {
+  width: 35%; /* Adjust the size of your logo */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.dash-nav .sign-out { 
+  margin-right: 1vw;
+  padding: .8vh;
+  font-size: 1.2em; /* Enlarge the button */
+  border-radius: 15px;; /* Gives the button rounded corners */
+  text-align: center;
+}
+
+
+
 
 /* Title styles - Centralize text */
 .dash-title {
@@ -80,4 +93,8 @@
   .app-bar a:last-child {
     border-bottom: 1px solid black; /* Ensure border for the last tab */
   }
+}
+
+body {
+  background-color: gray;
 }

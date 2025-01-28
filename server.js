@@ -1,18 +1,15 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
-const app = express();
-const mongoose = require("mongoose")
+const app = express();  // Make sure this line is near the top and before any use of `app`
+const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 const session = require("express-session");
-const MongoStore = require('connect-mongo');
-const path = require('path');  // Make sure this line is present
 
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs'); // Set 'ejs' or any other view engine you are using
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Import middleware functions
 const isSignedIn = require('./middleware/is-signed-in.js');
@@ -20,39 +17,33 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect(process.env.MONGODB_URI);
-
-mongoose.connection.on("connected", () => {
-  console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
-})
+// Database setup
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log(`Connected to MongoDB ${mongoose.connection.name}.`))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method"))
+app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
   cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hours
 }));
 
 app.use(passUserToView);
 
-// Landing Page
+// Routes
 app.get('/', (req, res) => {
-  console.log(req.session, " HELLO <- req.session");
-
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/dashboard`);
   } else {
     res.render('index.ejs');
-    console.log('could not render dashboard/home.ejs')
   }
 });
 
-// Define the welcome route
 app.get('/welcome', (req, res) => {
   if (req.session.user) {
     res.render('welcome.ejs');
@@ -61,13 +52,25 @@ app.get('/welcome', (req, res) => {
   }
 });
 
+app.get('/auth/sign-out', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.error("Error ending session: ", err);
+      return res.status(500).send("Error ending session");
+    }
+    res.redirect('/'); // Redirect to login page
+  });
+});
+
 const dashboardRoutes = require('./routes/dashboard');
-// Corrected imports in server.js
-const authRoutes = require('./controllers/authController'); // Ensure this file exists
+const authRoutes = require('./controllers/authController');
+const healthRoutes = require('./routes/health');
+const medicationRouter = require('./routes/medications');
 
-
+app.use('/', medicationRouter);
 app.use('/auth', authRoutes);
 app.use('/users/:userId/dashboard', isSignedIn, dashboardRoutes);
+app.use(healthRoutes);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

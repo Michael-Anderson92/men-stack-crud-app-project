@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <%- include('../partials/html-head.ejs') %>
 <body>
-  
+  <%- include('../partials/dashNav.ejs') %>
+  <%- include('../partials/dashTitle.ejs') %>
+  <%- include('../partials/app-bar.ejs') %>
+  <h1>---------------MEDICATIONS PAGE------------------</h1>
+  <a href="/users/<%= user._id %>/mymeds/newmed">Click here to add a medication</a>
+  <ul>
+    <% medications.forEach(medication => { %> 
+    <li><%= medication.medicationName %>: <%= medication.dosage %> <%= medication. %>
+    </li>
+    <% }) %>
+</ul>
 </body>
 </html>
