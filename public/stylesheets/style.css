@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #A8E0FF;
@@ -26,26 +27,27 @@ body {
   margin-top: 20px; /* Add a small margin on the top */
   padding-left: 10px; /* Add padding to the left */
   padding-right: 10px; /* Add padding to the right */
+  margin-left: 10px; /* Ensure margin on the left side of the entire div */
+  margin-right: 10px; /* Ensure margin on the right side of the entire div */
+  gap: 10px; /* Add space between the video containers */
+}
+
+.video-container .video-title {
+  flex: 1; /* Distribute space equally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 10px;
 }
 
 .video-container iframe {
-  width: 100%;
+  width: 100%; /* Full width within parent */
   height: 200px; /* Set a specific height */
   border-style: ridge;
   border-width: 5px;
   border-color: black;
-  margin-bottom: 5vh;
+  margin-bottom: 10px; /* Add space below the iframe */
 }
-
-.video-title {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-
-
 
 .index-background,
 .sign-in-background,
@@ -105,8 +107,6 @@ body {
   background-color: #d98a61; /* Slightly lighter color on hover */
 }
 
-
-
 .dash-title {
   display: flex;
   justify-content: center;
@@ -115,6 +115,10 @@ body {
   background-color: #ffdb98;
   margin: 0;
   padding: 2vh;
+}
+
+.dash-title h1 {
+  font-size: 8vh;
 }
 
 .dash-title a {
