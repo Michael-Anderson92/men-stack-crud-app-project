@@ -1,4 +1,4 @@
-<p align="center"> <img src="/public/images/title.png" alt="Health Nut cover"> </p>
+<p align="center"> <img src="" alt="Health Nut cover"> </p>
 
 <h1 align="center"><strong>Health Nut Health Tracking Application</strong></h1>
 
