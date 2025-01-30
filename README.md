@@ -1,4 +1,4 @@
-<p align="center"> <img src="" alt="Health Nut cover"> </p>
+<p align="center"> <img src="/public/images/title2.png" alt="Health Nut cover"> </p>
 
 <h1 align="center"><strong>Health Nut Health Tracking Application</strong></h1>
 
@@ -12,10 +12,11 @@
 
 <div align="center"> <img src="https://img.shields.io/badge/Version-1.0.0-green?style=flat" alt="Version"> </div>
 
-📄 Description
+## 📄 Description
+
 Health Nut is a personalized health tracking application for users to keep logs on their personal health details in one easily accessible dashboard environment. The app monitors different aspects of health such as Weight, Medication, Sleep, Fitness, and Mental Health.
 
-📸 Screenshots
+## 📸 Screenshots
 <table style="width:100%;">
   <tr>
     <td style="width:30%; vertical-align: top;">
@@ -73,21 +74,20 @@ Health Nut is a personalized health tracking application for users to keep logs 
 ![EJS](https://img.shields.io/badge/-EJS-000000?style=flat&logo=ejsgrey)
 ![Mongoose](https://img.shields.io/badge/-Mongoose-800000?style=flat&logo=mongoose)
 
-🔥 Getting Started
-Instructions
+## 🔥 Getting Started
 
-1. Create an account to start tracking your health metrics.
-2. Navigate to the dashboard to get an overview of your health stats.
-3. Log your daily weight, medication intake, and sleep patterns.
-4. Track your fitness activities and record your workouts.
-5. Maintain a mental health journal to log your moods and mental health progress.
+Instructions:
+
+1. Create a personalized profile
+2. Log your daily weight, medication intake, and sleep patterns.
+3. Track your fitness activities and record your workouts.
+4. Maintain a mental health journal to log your moods and mental health progress.
+5. Journal entries for improved sleep quality.
 6. Customize your dashboard to focus on the health aspects most important to you.
-
-P.S. - We're continually working to improve the user experience. Keep an eye out for future updates!
 
 <div align="center"> <h4>Stay healthy with Health Nut! 🥑</h4> </div>
 
-📡 Upcoming Features
+## 📡 Upcoming Features
 
 [:x:] Detailed analytics and progress reports to monitor improvements over time.
 
