@@ -16,7 +16,48 @@
 Health Nut is a personalized health tracking application for users to keep logs on their personal health details in one easily accessible dashboard environment. The app monitors different aspects of health such as Weight, Medication, Sleep, Fitness, and Mental Health.
 
 📸 Screenshots
-<table style="width:100%;"> <tr> <td style="width:30%; vertical-align: top;"> <strong>Description</strong> </td> <td style="width:70%; vertical-align: top;"> <strong>Screenshot</strong> </td> </tr> <tr> <td style="width:30%; vertical-align: top;"> <strong>Dashboard:</strong> </td> <td style="width:70%; vertical-align: top;"> <img src="" style="width: 100%;"> </td> </tr> <tr> <td style="width:30%; vertical-align: top;"> <strong>Weight Tracking:</strong> </td> <td style="width:70%; vertical-align: top;"> <img src="" style="width: 100%;"> </td> </tr> <tr> <td style="width:30%; vertical-align: top;"> <strong>Medication Log:</strong> </td> <td style="width:70%; vertical-align: top;"> <img src="" alt="" style="width: 100%;"> </td> </tr> <tr> <td style="width:30%; vertical-align: top;"> <strong>Fitness Records:</strong> </td> <td style="width:70%; vertical-align: top;"> <img src="" alt="" style="width: 100%;"> </td> </tr> <tr> <td style="width:30%; vertical-align: top;"> <strong>Sleep Tracking:</strong> </td> <td style="width:70%; vertical-align: top;"> <img src="" alt="" style="width: 100%;"> </td> </tr> <tr> <td style="width:30%; vertical-align: top;"> <strong>Mental Health Journal:</strong> </td> <td style="width:70%; vertical-align: top;"> <img src="" alt="" style="width: 100%;"> </td> </tr> </table>
+<table style="width:100%;">
+  <tr>
+    <td style="width:30%; vertical-align: top;">
+      <strong>Description</strong>
+    </td>
+    <td style="width:70%; vertical-align: top;">
+      <strong>Screenshot</strong>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:30%; vertical-align: top;">
+      <strong>Login Page:</strong>
+    </td>
+    <td style="width:70%; vertical-align: top;">
+      <img src="/public/images/index-page.png" alt="Start menu screenshot" style="width: 100%;">
+    </td>
+  </tr>
+  <tr>
+    <td style="width:30%; vertical-align: top;">
+      <strong>Sign in:</strong>
+    </td>
+    <td style="width:70%; vertical-align: top;">
+      <img src="/public/images/sign-in" alt="Game play screenshot" style="width: 100%;">
+    </td>
+  </tr>
+  <tr>
+    <td style="width:30%; vertical-align: top;">
+      <strong>Sign Up:</strong>
+    </td>
+    <td style="width:70%; vertical-align: top;">
+      <img src="/public/images/sign-up" alt="High score screenshot" style="width: 100%;">
+    </td>
+  </tr>
+   <tr>
+    <td style="width:30%; vertical-align: top;">
+      <strong>Dashboard:</strong>
+    </td>
+    <td style="width:70%; vertical-align: top;">
+      <img src="/public/images/dashboard" alt="Leaderboard screenshot" style="width: 100%;">
+    </td>
+  </tr>
+</table>
 
 ## 💻 Technologies Used
 ![JavaScript](https://img.shields.io/badge/-JavaScript-323330?style=flat&logo=javascript)
