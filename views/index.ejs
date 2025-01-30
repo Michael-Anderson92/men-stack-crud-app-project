@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poiret+One&display=swap" rel="stylesheet">
   <title>Home Page</title>
 </head>
-<body>
-  <h1>Health Nut</h1>  
-  <p>Empower your health, one step at a time.</p>
+<body id="index-body">
+  <div id="title">
+    <h1>Health Nut</h1>  
+    <p>Empower your health, one step at a time.</p><br>
+    <div id="auth">
+      <button class="authButtons" onclick="window.location.href='/auth/sign-in'">Sign in</button>
+      <button class="authButtons" onclick="window.location.href='/auth/sign-up'">Sign up</button>
+    </div>
+  </div>
 
-  <a class="authButtons" href="/auth/sign-in">Sign in</a>
-  <a class="authButtons" href="/auth/sign-up">Sign up</a>
-
-  <div>User Testimonial 1</div>
-  <div>User Testimonial 2</div>
-  <div>User Testimonial 3</div>
-
-  <% if (user) { %>
-    <span>Hi <%= user.username %></span>
-  <% } %>
-
-
-
+  <div id="testimonial-section">
+  <div class="testimonials">"Health Nut keeps me on track with my fitness goals. It's like having a personal coach in my pocket!"</div>
+  <div class="testimonials">"I love how easy it is to track my meals and workouts. Health Nut makes staying healthy fun!"</div>
+  <div class="testimonials">"This app is a game-changer! I've never felt more motivated to stay active and eat right."</div>
+  <div class="testimonials">"Health Nut's insights are spot-on. It's helped me make smarter health choices every day."</div>
+  </div>
 </body>
 </html>
