@@ -1,4 +1,4 @@
-<p align="center"> <img src="" alt="Health Nut cover"> </p>
+<p align="center"> <img src="/public/images/title.png" alt="Health Nut cover"> </p>
 
 <h1 align="center"><strong>Health Nut Health Tracking Application</strong></h1>
 
@@ -38,7 +38,7 @@ Health Nut is a personalized health tracking application for users to keep logs 
       <strong>Sign in:</strong>
     </td>
     <td style="width:70%; vertical-align: top;">
-      <img src="/public/images/sign-in" alt="Game play screenshot" style="width: 100%;">
+      <img src="/public/images/sign-in.png" alt="Game play screenshot" style="width: 100%;">
     </td>
   </tr>
   <tr>
@@ -46,7 +46,7 @@ Health Nut is a personalized health tracking application for users to keep logs 
       <strong>Sign Up:</strong>
     </td>
     <td style="width:70%; vertical-align: top;">
-      <img src="/public/images/sign-up" alt="High score screenshot" style="width: 100%;">
+      <img src="/public/images/sign-up.png" alt="High score screenshot" style="width: 100%;">
     </td>
   </tr>
    <tr>
@@ -54,7 +54,7 @@ Health Nut is a personalized health tracking application for users to keep logs 
       <strong>Dashboard:</strong>
     </td>
     <td style="width:70%; vertical-align: top;">
-      <img src="/public/images/dashboard" alt="Leaderboard screenshot" style="width: 100%;">
+      <img src="/public/images/dashboard.png" alt="Leaderboard screenshot" style="width: 100%;">
     </td>
   </tr>
 </table>
