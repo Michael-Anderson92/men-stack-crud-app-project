@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
-</head>
-<body>
-  <img class="sign-in-background" src="/images/yellow-spiral-background.jpg">
-
+  <%- include('../partials/html-head.ejs') %>
+<body id="sign-in-body">
   <h1>Sign in</h1>
   <form action="/auth/sign-in" method="POST">
     <label for="username">Username:</label>

@@ -7,9 +7,14 @@ const User = require('../models/user')
 // Define the POST route
 
 router.get('/users/:userid/mymeds', async (req, res) => {
-  const medications = await Medication.find({userId: req.session.user._id});
-  res.render('dashboard/my-meds.ejs', {medications: medications});
+  const medications = await Medication.find({ userId: req.session.user._id });
+  res.render('dashboard/my-meds.ejs', {
+    medications: medications,
+    activePage: 'mymeds', // Adding the activePage variable
+    user: req.session.user // Passing the user object
+  });
 });
+
 
 router.get('/users/:userid/mymeds/:medid/editmed', async (req, res) => {
   try {

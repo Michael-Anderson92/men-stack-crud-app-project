@@ -54,7 +54,7 @@ app.get('/welcome', (req, res) => {
   }
 });
 
-app.get('/auth/sign-out', (req, res) => {
+app.post('/auth/sign-out', (req, res) => {
   req.session.destroy(err => {
     if (err) {
       console.error("Error ending session: ", err);

@@ -3,9 +3,14 @@
     <a class="logo" href="/users/<%= user._id %>/dashboard">
       <img src="/images/logo.png" alt="Company Logo">
     </a>
-    <a class="sign-out" href="/auth/sign-out">Sign Out</a>
+    <form class="sign-out" action="/auth/sign-out" method="POST">
+      <button type="submit">Sign Out</button>
+    </form>
   <% } else { %>
     <a class="sign-in" href="/auth/sign-in">Sign In</a>
-    <a class="sign-out" href="/auth/sign-out">Sign Out</a>
+    <form class="sign-out" action="/auth/sign-out" method="POST">
+      <button type="submit">Sign Out</button>
+    </form>
   <% } %>
 </nav>
+

@@ -1,88 +1,145 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #A8E0FF;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #9ac2ef;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.index-background,
+.sign-in-background,
+.sign-up-background,
+.home-background,
+.weight-background,
+.medication-background,
+.fitness-background,
+.mind-background,
+.sleep-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
 .dash-nav {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  color: #37371F; 
-  background-color: #90BE6D; 
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  background-color: #f7b83a;
 }
 
-
 .dash-nav a {
-  display: flex; 
-  color: #37371F;
+  display: flex;
+  color: #ffffff;
 }
 
 .dash-nav .logo img {
-  width: 30%; 
-  height: auto; 
+  width: 30%;
+  height: auto;
 }
 
-.dash-nav .sign-out { 
+.dash-nav .sign-out {
   margin-right: 1vw;
   padding: .8vh;
-  font-size: 1.2em; 
-  border-radius: 15px;; 
+  font-size: 1.2em;
+  border-radius: 15px;
   text-align: center;
 }
 
+.sign-out button {
+  background-color: #b77748; /* New background color */
+  color: #ffffff; /* White text for contrast */
+  border: 2px solid #d98a61; /* Adjusted border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sign-out button:hover {
+  background-color: #d98a61; /* Slightly lighter color on hover */
+}
 
 
 
 .dash-title {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  color: #37371F; 
-  background-color: #C9E3AC; 
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  background-color: #ffdb98;
   margin: 0;
   padding: 2vh;
 }
 
 .dash-title a {
-  color: #37371F; 
+  color: #333333;
 }
 
-/* App bar styles */
 .app-bar {
-  display: flex; 
-  justify-content: space-between; 
-  background-color: #EAEFBD;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7b83a;
   padding: 0;
-
 }
 
 .app-bar a {
-  flex: 1; 
+  flex: 1;
   max-width: 20%;
-  text-align: center; 
+  text-align: center;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   padding: 15px;
   text-decoration: none;
-  color: #37371F; 
-  background: #EAEFBD; 
-  border: 1px solid #37371F; 
+  color: #333333;
+  background: #ffdb98;
+  border: 1px solid #333333;
   border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: bold;
 }
 
-
 @media (max-width: 480px) {
   .app-bar {
     flex-direction: column;
     align-items: center;
+  }
+
+  .app-bar .active {
+    background-color: #fbc55b; /* Background color for active tab */
+    color: #333333; /* Text color for active tab */
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .app-bar .inactive {
+    background-color: #ffdb98; /* Background color for inactive tabs */
+    color: #333333; /* Text color for inactive tabs */
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .app-bar .inactive:hover {
+    background-color: #f7b83a; /* Slightly darker on hover */
   }
 
   .app-bar a {
@@ -92,7 +149,7 @@
   }
 
   .app-bar a:last-child {
-    border-bottom: 1px solid black; 
+    border-bottom: 1px solid black;
   }
 }
 
@@ -103,8 +160,8 @@
 }
 
 #index-body #title {
-  margin: 1vh 20vw 1vh 20vw;
-  padding: 0 0 5vh 0;
+  margin: 1vh 20vw;
+  padding: 0 0 5vh;
   border-radius: 25px;
 }
 
@@ -112,7 +169,6 @@
   color: #53131e;
   font-size: 9em;
   font-family: 'Indie flower', cursive;
-  height: 1em;
 }
 
 #index-body p {
@@ -128,156 +184,87 @@
   justify-content: center;
 }
 
-
 #index-body .authButtons {
-  padding: 1vw 2vw; /* Adjust the padding */
-  border-radius: 10px; /* Add rounded corners */
-  background-color: #53131e; /* Set the background color */
-  color: #87bba2; /* Set the text color */
-  border: none; /* Remove the border */
-  font-size: 1.2em; /* Increase the font size */
-  cursor: pointer; /* Change the cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  padding: 1vw 2vw;
+  border-radius: 10px;
+  background-color: #53131e;
+  color: #87bba2;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #index-body .authButtons:hover {
-  background-color: #b25d6b; /* Darker shade on hover */
+  background-color: #b25d6b;
   color: black;
 }
 
-
 #index-body #testimonial-section {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 5vh;
-    border-top-width: 2px; /* Add width */
-    border-top-style: ridge; /* Add style */
-    border-top-color: black; /* Add color */
-    border-bottom-width: 2px; /* Add width */
-    border-bottom-style: ridge; /* Add style */
-    border-bottom-color: black; /* Add color */
-  }
-
-
-  #index-body .testimonials {
-    display: flex;
-    border-left: ridge;
-    border-right: ridge;
-    border-left-color: black;
-    border-right-color: black;
-    border-top: none;
-    border-bottom: none;
-    height: 15vw;
-    width: 20vw;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: #87bba2;
-    color: #53131e;
-    font-size: 1.5em;
-  }
-  
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #A8E0FF;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  background-color: #9ac2ef;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+  border-top: 2px ridge black;
+  border-bottom: 2px ridge black;
+}
+
+#index-body .testimonials {
+  display: flex;
+  border-left: ridge black;
+  border-right: ridge black;
+  height: 15vw;
+  width: 20vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #87bba2;
+  color: #53131e;
+  font-size: 1.5em;
+}
+
+#sign-in-body, #sign-up-body {
+  background-image: url('/images/yellow-spiral-background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.index-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+#sign-in-body h1, #sign-up-body h1 {
+  color: white;
 }
 
-.sign-in-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+#sign-in-body form, #sign-up-body form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.sign-up-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+#sign-in-body input, #sign-up-body input, #sign-in-body button, #sign-up-body button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
-.home-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+#sign-in-body button, #sign-up-body button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.weight-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.medication-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Adjust the z-index to your requirement */
-}
-
-.fitness-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Adjust the z-index to your requirement */
-}
-
-.mind-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.sleep-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+#sign-in-body button:hover, #sign-up-body button:hover {
+  background-color: #45a049;
 }
 
 .medication-field {
@@ -295,8 +282,7 @@ body {
 }
 
 .medication-field li {
-  border-color: #37371F;
-  border-style: ridge;
+  border: ridge #37371F;
   display: flex;
   justify-content: space-between;
 }
@@ -307,10 +293,8 @@ body {
 }
 
 .medication-buttons {
-  position: relative;
   display: flex;
   text-align: right;
-  position: relative;
   margin-left: 2vw;
   margin-right: 2em;
   flex-direction: column;
@@ -321,24 +305,10 @@ body {
   color: #37371F;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   justify-content: space-evenly;
 }
 
-#edit-form {
-  right: 0;
-}
-
-.addMed-form {
-  color: #37371F;
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-.editMed-form {
+.addMed-form, .editMed-form {
   color: #37371F;
   display: flex;
   flex-direction: row;
@@ -349,32 +319,22 @@ body {
 
 .currentMeds {
   color: #37371F;
-  background-color: #EAEFBD;
+  background-color: #d7f5cc;
   display: flex;
-  flex-direction: column; /* Ensures items are stacked vertically */
+  flex-direction: column;
   width: 40%;
-  border-style: ridge;
-  border-color: #37371F;
+  border: ridge #37371F;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
-#edit-button {
-  right: 0;
-}
-
 .med-buttons {
   background-color: #C9E3AC;
-  padding: 10px 20px; /* Horizontal and Vertical Padding */
+  padding: 10px 20px;
   border-radius: 15px;
   color: #37371F;
   align-self: center;
-  margin-top: 1em; /* Ensure margin properties are properly separated */
-  margin-bottom: 1em; 
-  display: block; /* Centering the button horizontally */
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
+  display: block;
 }
-
-
