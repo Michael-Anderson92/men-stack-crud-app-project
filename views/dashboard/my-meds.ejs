@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/html-head.ejs') %>
-<body>
   <%- include('../partials/dashNav.ejs') %>
   <%- include('../partials/dashTitle.ejs') %>
   <%- include('../partials/app-bar.ejs') %>
-  <h1>---------------MEDICATIONS PAGE------------------</h1>
-  <a href="/users/<%= user._id %>/mymeds/newmed">Click here to add a medication</a>
-  <ul>
-    <% medications.forEach(medication => { %> 
-    <li><%= medication.medicationName %>: <%= medication.dosage %> <%= medication. %>
-    </li>
-    <% }) %>
-</ul>
+<body class="medication-body">
+  <img class="medication-background" src="/images/medication-background.png" class="background-image">
+  <div class="currentMeds">
+    <br><h1>Current Medications: </h1>
+    <h3>Add a new medication <a href="/users/<%= user._id %>/mymeds/newmed">here</a></h3><br>
+    <div class="medication-field">
+    <ul>
+      <% medications.forEach(medication => { %> 
+        <li>
+          <div class="medication-info">
+          <strong>Medication:</strong> <%= medication.medicationName %><br>
+          <strong>Dosage:</strong> <%= medication.dosage %><br>
+          <strong>Frequency:</strong> <%= medication.frequency %><br>
+          <strong>Start Date:</strong> <%= new Date(medication.startDate).toLocaleDateString() %><br>
+          <strong>End Date:</strong> <%= medication.endDate ? new Date(medication.endDate).toLocaleDateString() : 'N/A' %>
+          </div>
+          <div class="medication-buttons">
+          <form id="edit-form" action="/users/<%= user._id %>/mymeds/<%= medication._id %>/editmed" method="GET" style="display:inline;">
+            <button class="med-buttons" id="edit-button" type="submit">Edit</button>
+          </form>
+          <form action="/users/<%= user._id %>/mymeds/<%= medication._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button class="med-buttons" type="submit">Delete</button>
+          </form>
+          <br> <!-- Added <br> after the buttons -->
+        </div>
+        </li>
+        <br> <!-- Adding <br> for spacing between list items -->
+      <% }) %>
+    </ul>
+    </div>
+  </div>
 </body>
 </html>

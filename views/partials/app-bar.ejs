@@ -1,10 +1,10 @@
 <nav class="app-bar">
   <% if (user) { %>
-      <a href="/users/<%= user._id %>/myweight">My Weight</a>
-      <a href="/users/<%= user._id %>/mymeds">My Meds</a>
-      <a href="/users/<%= user._id %>/mysleep">My Sleep</a>
-      <a href="/users/<%= user._id %>/myfitness">My Fitness</a>
-      <a href="/users/<%= user._id %>/mymind">My Mind</a>
+      <a href="/users/<%= user._id %>/myweight">Health Stats</a>
+      <a href="/users/<%= user._id %>/mymeds">Medication Log</a>
+      <a href="/users/<%= user._id %>/mysleep">Sleep Tracker</a>
+      <a href="/users/<%= user._id %>/myfitness">Fitness Journal</a>
+      <a href="/users/<%= user._id %>/mymind">Mental Check-in</a>
   <% } else {%>
       <a href="/auth/sign-in">Sign In</a>
       <a href="/auth/sign-out">Sign Out</a>

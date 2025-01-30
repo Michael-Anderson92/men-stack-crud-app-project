@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/html-head.ejs') %>
+  <%- include('../partials/dashNav.ejs') %>
+  <%- include('../partials/dashTitle.ejs') %>
+  <%- include('../partials/app-bar.ejs') %>
+<body class="edit-medication">
+  <img class="medication-background" src="/images/medication-background.png" class="background-image">
+  <div class="currentMeds">
+  <h1>Edit: <%= medication.medicationName %></h1>
+  <div class="medication-field">
+  <form class="editMed-form" "action="/users/<%= user._id %>/mymeds/<%= medication._id %>?_method=PUT" method="POST">
+    <div class="med-form-left">
+      <div>
+        <label for="medicationName">Medication:</label><br>
+        <input type="text" id="medicationName" name="medicationName" required>
+      </div>
+      <div>
+        <label for="dosage">Dosage:</label><br>
+        <input type="text" id="dosage" name="dosage" required>
+      </div>
+      <div>
+        <label for="frequency">Frequency:</label><br>
+        <input type="text" id="frequency" name="frequency" required>
+      </div>
+    </div>
+    <div class="med-form-right">
+      <div>
+        <label for="startDate">Start Date:</label><br>
+        <input type="date" id="startDate" name="startDate" required>
+      </div>
+      <div>
+        <label for="endDate">End Date:</label><br>
+        <input type="date" id="endDate" name="endDate">
+      </div>
+      <div>
+        <label for="note">Note:</label><br>
+        <textarea id="note" name="note"></textarea>
+      </div>
+    </div>
+  </div>
+      <button class="med-buttons" type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

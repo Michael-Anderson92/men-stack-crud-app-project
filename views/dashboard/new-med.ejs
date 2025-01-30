@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/html-head.ejs') %>
-<body>
   <%- include('../partials/dashNav.ejs') %>
   <%- include('../partials/dashTitle.ejs') %>
   <%- include('../partials/app-bar.ejs') %>
-  <h1>---------------MEDICATIONS PAGE------------------</h1>
-  
-  <form action="/users/<%= user._id %>/mymeds" method="POST">
+<body class="add-medication">
+  <img class="medication-background" src="/images/medication-background.png" alt="Medication Background">
+
+  <div class="currentMeds">
+  <h1>Add medication:</h1>
+  <div class="medication-field">
+  <form class="addMed-form" action="/users/<%= user._id %>/mymeds" method="POST">
+    <div class="med-form-left">
     <div>
-      <label for="medicationName">Medication Name:</label>
+      <label for="medicationName">Medication:</label><br>
       <input type="text" id="medicationName" name="medicationName" required>
     </div>
     <div>
-      <label for="dosage">Dosage:</label>
+      <label for="dosage">Dosage:</label><br>
       <input type="text" id="dosage" name="dosage" required>
     </div>
     <div>
-      <label for="frequency">Frequency:</label>
+      <label for="frequency">Frequency:</label><br>
       <input type="text" id="frequency" name="frequency" required>
     </div>
+  </div>
+  <div class="med-form-right">
     <div>
-      <label for="startDate">Start Date:</label>
+      <label for="startDate">Start Date:</label><br>
       <input type="date" id="startDate" name="startDate" required>
     </div>
     <div>
-      <label for="endDate">End Date:</label>
+      <label for="endDate">End Date:</label><br>
       <input type="date" id="endDate" name="endDate">
     </div>
     <div>
-      <label for="note">Note:</label>
+      <label for="note">Note:</label><br>
       <textarea id="note" name="note"></textarea>
     </div>
-    <button type="submit">Submit</button>
+  </div>
+</div>
+    <button class="med-buttons" type="submit">Submit</button>
   </form>
-  
+</div>
+</div>
 </body>
 </html>

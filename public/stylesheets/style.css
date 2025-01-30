@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,18 +12,18 @@
   display: flex;
   justify-content: space-between; /* Spread contents */
   align-items: center; /* Vertically align items */
-  color: #EEE8AA; /* Pale Gold text color */
-  background-color: blue; /* Forest Green background */
+  color: #37371F; /* Pale Gold text color */
+  background-color: #90BE6D; /* Forest Green background */
 }
 
 
 .dash-nav a {
   display: flex; 
-  color: #EEE8AA;
+  color: #37371F;
 }
 
 .dash-nav .logo img {
-  width: 35%; /* Adjust the size of your logo */
+  width: 30%; /* Adjust the size of your logo */
   height: auto; /* Maintain the aspect ratio */
 }
 
@@ -40,25 +43,24 @@
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-  color: #228B22; /* Forest Green text color */
-  background-color: #98FF98; /* Light Mint background */
+  color: #37371F; /* Forest Green text color */
+  background-color: #C9E3AC; /* Light Mint background */
   margin: 0;
   padding: 2vh;
   /*border: ridge black; Removed border */
 }
 
 .dash-title a {
-  color: #228B22; /* Forest Green text color */
+  color: #37371F; /* Forest Green text color */
 }
 
 /* App bar styles */
 .app-bar {
   display: flex; 
   justify-content: space-between; /* Spread contents evenly */
-  background-color: #EEE8AA; /* Pale Gold background */
+  background-color: #EAEFBD; /* Pale Gold background */
   padding: 0;
-  border: ridge black;
-  border-bottom: 2px solid black;
+
 }
 
 .app-bar a {
@@ -70,9 +72,10 @@
   align-items: center; /* Center text vertically */
   padding: 15px;
   text-decoration: none;
-  color: #228B22; /* Forest Green text color */
-  background: #EEE8AA; /* Pale Gold background */
-  border: 1px solid black; /* Added border around each tab */
+  color: #37371F; /* Forest Green text color */
+  background: #EAEFBD; /* Pale Gold background */
+  border: 1px solid #37371F; /* Added border around each tab */
+  border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: bold;
 }
@@ -95,6 +98,125 @@
   }
 }
 
+
 body {
-  background-color: gray;
+  font-family: 'Poppins', sans-serif;
+  background-color: #A8E0FF;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #9ac2ef;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+
+.medication-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Adjust the z-index to your requirement */
+}
+
+.medication-field {
+  color: #37371F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  align-items: center;
+}
+
+.medication-field ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.medication-field li {
+  border-color: #37371F;
+  border-style: ridge;
+  display: flex;
+  justify-content: space-between;
+}
+
+.medication-info {
+  text-align: left;
+  padding: 1em;
+}
+
+.medication-buttons {
+  position: relative;
+  display: flex;
+  text-align: right;
+  position: relative;
+  margin-left: 2vw;
+  margin-right: 2em;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.med-form-alignment {
+  color: #37371F;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+#edit-form {
+  right: 0;
+}
+
+.addMed-form {
+  color: #37371F;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.editMed-form {
+  color: #37371F;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.currentMeds {
+  color: #37371F;
+  background-color: #EAEFBD;
+  display: flex;
+  flex-direction: column; /* Ensures items are stacked vertically */
+  width: 40%;
+  border-style: ridge;
+  border-color: #37371F;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-button {
+  right: 0;
+}
+
+.med-buttons {
+  background-color: #C9E3AC;
+  padding: 10px 20px; /* Horizontal and Vertical Padding */
+  border-radius: 15px;
+  color: #37371F;
+  align-self: center;
+  margin-top: 1em; /* Ensure margin properties are properly separated */
+  margin-bottom: 1em; 
+  display: block; /* Centering the button horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
