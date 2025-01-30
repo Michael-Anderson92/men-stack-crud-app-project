@@ -87,7 +87,7 @@ Instructions:
 
 <div align="center"> <h4>Stay healthy with Health Nut! 🥑</h4> </div>
 
-📡 Upcoming Features
+## 📡 Upcoming Features
 
 [:x:] Detailed analytics and progress reports to monitor improvements over time.
 
